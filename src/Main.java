@@ -1,4 +1,3 @@
-import Data.Data;
 import Logic.LogicGame;
 import RuleGame.Rule;
 
@@ -7,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
-    //private final static ArrayStorage ARRAY_STORAGE = new ArrayStorage();
+
     static Rule rule = new Rule();
     static LogicGame logicGame = new LogicGame();
 
@@ -21,10 +20,7 @@ public class Main {
                 System.out.println("Неверная команда.");
                 continue;
             }
-            String uuid = null;
-            if (params.length == 2) {
-                uuid = params[1].intern();
-            }
+            String var = null;
             switch (params[0]) {
                 case "rule":
                     System.out.println(rule.rule);

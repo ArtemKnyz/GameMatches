@@ -1,7 +1,5 @@
 package Data;
 
-import java.util.ArrayList;
-
 public class Data {
     private int count;
 
