@@ -1,6 +1,7 @@
 package Data;
 
 public class Data {
+    final public int allMatches = 20;
     private int count;
 
     public int getCount() {
