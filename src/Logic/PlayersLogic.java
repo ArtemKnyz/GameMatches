@@ -3,7 +3,6 @@ import java.util.Scanner;
 
  class PlayersLogic {
     private int counterMovePlayer;
-
     int movePlayer() {
         Scanner scanner = new Scanner(System.in);
         boolean checkMovePlayer = false;

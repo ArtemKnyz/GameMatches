@@ -2,6 +2,7 @@ package Logic;
 import Data.Data;
 
 public class GameLogic {
+
     private boolean checkEndGame;
     private boolean programExecutionCheck = true;
     Data data = new Data();

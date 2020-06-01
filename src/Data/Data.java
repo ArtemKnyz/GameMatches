@@ -10,7 +10,6 @@ public class Data {
     public void setCount(int count) {
         this.count = count;
     }
-
     public void stepExecution(int count) {
         this.count = this.count - count;
     }
