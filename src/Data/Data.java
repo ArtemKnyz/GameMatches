@@ -11,7 +11,7 @@ public class Data {
         this.count = count;
     }
 
-    public void value(int count) {
+    public void stepExecution(int count) {
         this.count = this.count - count;
     }
 
