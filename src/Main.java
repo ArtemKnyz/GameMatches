@@ -14,9 +14,9 @@ public class Main {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         while (true) {
-            System.out.print("Введите одну из команд - (rule | level | start | exit): ");
+            System.out.print("Введите одну из команд - (rule | start | exit): ");
             String[] params = reader.readLine().trim().toLowerCase().split(" ");
-            if (params.length < 1 || params.length > 2) {
+            if (params.length < 1 ) {
                 System.out.println("Неверная команда.");
                 continue;
             }
@@ -25,15 +25,6 @@ public class Main {
                     System.out.println(rule.rule);
                     break;
                 case "start":
-                    System.out.print("Вы хотите ходить первым? - (yes  |  no): ");
-                    params = reader.readLine().trim().toLowerCase().split(" ");
-                    if ((params.length < 1 || params.length > 2) || (!params[0].equals("yes") & !params[0].equals("no"))) {
-                        System.out.println("Неверная команда.");
-                        break;
-                    } else if (params[0].equals("yes")) {
-                        logicGame.setFirstMove(true);
-                    } else if (params[0].equals("no")) {
-                    }
                     logicGame.startGame();
                     break;
                 case "exit":
