@@ -1,8 +1,10 @@
 package Logic;
+
 import java.util.Scanner;
 
- class PlayersLogic {
+class PlayersLogic {
     private int counterMovePlayer;
+
     int movePlayer() {
         Scanner scanner = new Scanner(System.in);
         boolean checkMovePlayer = false;
@@ -38,8 +40,8 @@ import java.util.Scanner;
         return 3;
     }
 
-     boolean checkValue(int variable) {
-        return (variable < 1 || variable > 3)?true:false;
+    boolean checkValue(int variable) {
+        return (variable < 1 || variable > 3) ? true : false;
     }
 }
 

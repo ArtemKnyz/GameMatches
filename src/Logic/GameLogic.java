@@ -1,5 +1,8 @@
 package Logic;
+
 import Data.Data;
+
+import java.util.Scanner;
 
 public class GameLogic {
 
@@ -9,15 +12,24 @@ public class GameLogic {
     PlayersLogic lg = new PlayersLogic();
 
     public void startGame() {
-       data.setCount(20);
+        Scanner scan = new Scanner(System.in);
+        boolean startGame = false;
+        System.out.print("Будете ходить первым? Введите  - (yes | (любой другой символ  - нет)): "); //default computer is a first
+        if (scan.nextLine().equals("yes")) {
+            startGame = true;
+        }
+        data.setCount(20);
         System.out.println("На столе находится " + data.getCount() + " спичек.");
         while (programExecutionCheck) {
-            data.stepExecution(lg.movePlayer());
-            System.out.println("Осталось: " + data.getCount());
-            if (checkEndGame()) {
-                System.out.println("Для компьютера осталась одна спичка. Компьютер проиграл! ");
-                return;
+            if (startGame) {
+                data.stepExecution(lg.movePlayer());
+                System.out.println("Осталось: " + data.getCount());
+                if (checkEndGame()) {
+                    System.out.println("Для компьютера осталась одна спичка. Компьютер проиграл! ");
+                    return;
+                }
             }
+            startGame = true;
             int moveMagistr = (lg.moveMagistrMatches(data.getCount()));
             data.stepExecution(moveMagistr);
             System.out.println("- Количество выбранных компьютером спичек: " + moveMagistr);
