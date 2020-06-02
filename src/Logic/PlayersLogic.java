@@ -7,7 +7,7 @@ import java.util.Scanner;
         Scanner scanner = new Scanner(System.in);
         boolean checkMovePlayer = false;
         while (!checkMovePlayer) {
-            System.out.print("Ваш ход. Сколько спичек вы хотите убрать? ");
+            System.out.print(" - Ход игрока. Введите количество спичек: ");
             try {
                 counterMovePlayer = scanner.nextInt();
             } catch (Exception ex) {
@@ -26,15 +26,15 @@ import java.util.Scanner;
     int moveMagistrMatches(int n) {
         switch (n % 4) {
             case 1, 2 -> {
-                System.out.print("Я убираю 1 спичку, ");
+                //System.out.print(" - Количество выбранных компьютером спичек: ");
                 return 1;
             }
             case 3 -> {
-                System.out.print("Я убираю 2 спички, ");
+                //System.out.print("Я убираю 2 спички, ");
                 return 2;
             }
         }
-        System.out.println("Я убираю 3 спички ");
+       // System.out.println("Я убираю 3 спички ");
         return 3;
     }
 

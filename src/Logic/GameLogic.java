@@ -12,15 +12,17 @@ public class GameLogic {
        data.setCount(20);
         while (programExecutionCheck) {
             data.stepExecution(lg.movePlayer());
-            System.out.println("осталось: " + data.getCount());
+            System.out.println("Осталось: " + data.getCount());
             if (checkEndGame()) {
-                System.out.println("Congratulations!!! ");
+                System.out.println("Для компьютера осталась одна спичка. Компьютер проиграл! ");
                 return;
             }
-            data.stepExecution(lg.moveMagistrMatches(data.getCount()));
-            System.out.println("осталось " + data.getCount());
+            int moveMagistr = (lg.moveMagistrMatches(data.getCount());
+            data.stepExecution(moveMagistr);
+            System.out.println("- Количество выбранных компьютером спичек: " + moveMagistr);
+            System.out.println("Осталось " + data.getCount());
             if (checkEndGame()) {
-                System.out.println("You are a loser (( ");
+                System.out.println("игрока осталась одна спичка. Игрок проиграл! ");
                 return;
             }
         }
