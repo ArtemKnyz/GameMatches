@@ -10,6 +10,7 @@ public class GameLogic {
 
     public void startGame() {
        data.setCount(20);
+        System.out.println("На столе находится " + data.getCount() + " спичек.");
         while (programExecutionCheck) {
             data.stepExecution(lg.movePlayer());
             System.out.println("Осталось: " + data.getCount());
@@ -17,12 +18,12 @@ public class GameLogic {
                 System.out.println("Для компьютера осталась одна спичка. Компьютер проиграл! ");
                 return;
             }
-            int moveMagistr = (lg.moveMagistrMatches(data.getCount());
+            int moveMagistr = (lg.moveMagistrMatches(data.getCount()));
             data.stepExecution(moveMagistr);
             System.out.println("- Количество выбранных компьютером спичек: " + moveMagistr);
             System.out.println("Осталось " + data.getCount());
             if (checkEndGame()) {
-                System.out.println("игрока осталась одна спичка. Игрок проиграл! ");
+                System.out.println("Для игрока осталась одна спичка. Игрок проиграл! ");
                 return;
             }
         }
@@ -31,7 +32,7 @@ public class GameLogic {
     boolean checkEndGame() {
         checkEndGame = false;
         if (data.getCount() == 1) {
-            System.out.print("Game over! ");
+            System.out.print("Игра окончена. ");
             checkEndGame = true;
         }
         return checkEndGame;

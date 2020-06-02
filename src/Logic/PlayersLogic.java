@@ -11,11 +11,14 @@ import java.util.Scanner;
             try {
                 counterMovePlayer = scanner.nextInt();
             } catch (Exception ex) {
-                System.out.print("ввести нужно цифру! \n");
                 scanner.nextLine();
+                System.err.print("Ввести нужно цифру! ");
+                System.out.println("");
                 continue;
             }
-            if (!checkValue(counterMovePlayer)) {
+            if (checkValue(counterMovePlayer)) {
+                System.err.print("Количество спичек должно быть от 1 до 3 ");
+                System.out.println("");
                 continue;
             }
             checkMovePlayer = true;
@@ -26,24 +29,17 @@ import java.util.Scanner;
     int moveMagistrMatches(int n) {
         switch (n % 4) {
             case 1, 2 -> {
-                //System.out.print(" - Количество выбранных компьютером спичек: ");
                 return 1;
             }
             case 3 -> {
-                //System.out.print("Я убираю 2 спички, ");
                 return 2;
             }
         }
-       // System.out.println("Я убираю 3 спички ");
         return 3;
     }
 
      boolean checkValue(int variable) {
-        if (variable < 1 || variable > 3) {
-            System.err.println("число должно быть от 1 до 3 ");
-            return false;
-        }
-        return true;
+        return (variable < 1 || variable > 3)?true:false;
     }
 }
 
